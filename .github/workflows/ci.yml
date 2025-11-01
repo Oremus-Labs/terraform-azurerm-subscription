@@ -21,16 +21,22 @@ jobs:
           terraform_version: 1.7.5
 
       - name: Setup TFLint
-        uses: terraform-linters/setup-tflint@v6.2.1
+        uses: terraform-linters/setup-tflint@v4
         with:
           tflint_version: v0.53.0
 
-      - name: Setup terraform-docs
-        uses: terraform-docs/gh-actions@v1.3.0
-        with:
-          terraform_docs_version: v0.17.0
-          working_dir: .
-          output_method: print
+      - name: Install terraform-docs
+        run: |
+          set -euo pipefail
+          VERSION=v0.20.0
+          OS=linux
+          ARCH=amd64
+          curl -sSL -o /tmp/terraform-docs.tar.gz \
+            https://github.com/terraform-docs/terraform-docs/releases/download/${VERSION}/terraform-docs-${VERSION}-${OS}-${ARCH}.tar.gz
+          mkdir -p "$HOME/bin"
+          tar -xzf /tmp/terraform-docs.tar.gz -C "$HOME/bin" terraform-docs
+          chmod +x "$HOME/bin/terraform-docs"
+          echo "$HOME/bin" >> $GITHUB_PATH
 
       - name: Install pre-commit
         run: |
