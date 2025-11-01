@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/Oremus-Labs/terraform-azurerm-subscription/compare/v0.2.0...v0.3.0) (2025-11-01)
+
+
+### Features
+
+* fix readme ([b9a1845](https://github.com/Oremus-Labs/terraform-azurerm-subscription/commit/b9a18452adf5aea7ec09687e2f9ae5a490cbec04))
+* fix readme ([ef98959](https://github.com/Oremus-Labs/terraform-azurerm-subscription/commit/ef98959124fc03f2ed5cecb95c372d55bab9f2ac))
+
 ## [0.2.0](https://github.com/Oremus-Labs/terraform-azurerm-subscription/compare/v0.1.0...v0.2.0) (2025-11-01)
 
 
