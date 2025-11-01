@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/Oremus-Labs/terraform-azurerm-subscription/compare/v0.3.0...v0.4.0) (2025-11-01)
+
+
+### Features
+
+* fixing adding name management group assigment & fixed resource … ([8da8299](https://github.com/Oremus-Labs/terraform-azurerm-subscription/commit/8da82991e91be17cdfb8dc91f72b2d98ed95bc21))
+* fixing adding name management group assigment & fixed resource group creation ([2cc8d4a](https://github.com/Oremus-Labs/terraform-azurerm-subscription/commit/2cc8d4a913481133b1371662db5ad5977cd0c5cc))
+
 ## [0.3.0](https://github.com/Oremus-Labs/terraform-azurerm-subscription/compare/v0.2.0...v0.3.0) (2025-11-01)
 
 
