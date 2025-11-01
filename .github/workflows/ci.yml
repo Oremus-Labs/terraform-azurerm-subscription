@@ -21,7 +21,7 @@ jobs:
           terraform_version: 1.7.5
 
       - name: Setup TFLint
-        uses: suzuki-shunsuke/setup-tflint@v1
+        uses: terraform-linters/setup-tflint@v6.2.1
         with:
           tflint_version: v0.53.0
 
