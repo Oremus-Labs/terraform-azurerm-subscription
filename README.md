@@ -22,6 +22,8 @@ module "subscription" {
   config = {
     display_name        = "Prod Subscription"
     management_group_id = "/providers/Microsoft.Management/managementGroups/orm-prod"
+    # or specify by name
+    # management_group_name = "orm-prod"
     tags = {
       environment = "prod"
       owner       = "platform-team"
@@ -89,7 +91,7 @@ See a runnable example in `examples/basic`.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_config"></a> [config](#input\_config) | Configuration object for the subscription. | <pre>object({<br>    display_name               = string<br>    billing_scope_id           = optional(string)<br>    billing_account_id         = optional(string, "e799251b-7b3d-54ef-6409-4801dd1f1d02:c86cff22-0ed7-47cc-b368-aa9c7d789837_2019-05-31")<br>    billing_profile_id         = optional(string, "22AJ-SLI2-BG7-PGB")<br>    billing_invoice_section_id = optional(string, "TPP6-6DZU-PJA-PGB")<br>    workload                   = optional(string)<br>    alias                      = optional(string)<br>    management_group_id        = optional(string)<br>    tags                       = optional(map(string))<br>    resource_group_defaults = optional(object({<br>      location = optional(string)<br>      tags     = optional(map(string))<br>    }))<br>    resource_groups = optional(map(object({<br>      name     = optional(string)<br>      location = optional(string)<br>      tags     = optional(map(string))<br>    })))<br>  })</pre> | n/a | yes |
+| <a name="input_config"></a> [config](#input\_config) | Configuration object for the subscription. | <pre>object({<br>    display_name               = string<br>    billing_scope_id           = optional(string)<br>    billing_account_id         = optional(string)<br>    billing_profile_id         = optional(string)<br>    billing_invoice_section_id = optional(string)<br>    workload                   = optional(string)<br>    alias                      = optional(string)<br>    management_group_id        = optional(string)<br>    management_group_name      = optional(string)<br>    tags                       = optional(map(string))<br>    resource_group_defaults = optional(object({<br>      location = optional(string)<br>      tags     = optional(map(string))<br>    }))<br>    resource_groups = optional(map(object({<br>      name     = optional(string)<br>      location = optional(string)<br>      tags     = optional(map(string))<br>    })))<br>  })</pre> | n/a | yes |
 | <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | Base set of tags applied to all subscriptions and resource groups. | `map(string)` | `{}` | no |
 | <a name="input_global_resource_group_defaults"></a> [global\_resource\_group\_defaults](#input\_global\_resource\_group\_defaults) | Global defaults applied to resource groups before subscription-level overrides. | <pre>object({<br>    location = optional(string)<br>    tags     = optional(map(string))<br>  })</pre> | `{}` | no |
 | <a name="input_subscription_key"></a> [subscription\_key](#input\_subscription\_key) | Identifier used to reference the subscription within the root module. | `string` | n/a | yes |

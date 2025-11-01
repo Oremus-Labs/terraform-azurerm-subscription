@@ -14,18 +14,23 @@ resource "azurerm_subscription" "this" {
 }
 
 resource "azurerm_management_group_subscription_association" "this" {
-  for_each = var.config.management_group_id != null ? { default = var.config.management_group_id } : {}
+  for_each = local.management_group_id != null ? { default = local.management_group_id } : {}
 
   management_group_id = each.value
-  subscription_id     = azurerm_subscription.this.id
+  subscription_id     = "/subscriptions/${azurerm_subscription.this.subscription_id}"
 }
 
-resource "azurerm_resource_group" "resource_group" {
+resource "azapi_resource" "resource_group" {
   for_each = local.resource_groups
 
-  name     = each.value.name
-  location = each.value.location
-  tags     = each.value.tags
+  type      = "Microsoft.Resources/resourceGroups@2021-04-01"
+  name      = each.value.name
+  location  = each.value.location
+  parent_id = "/subscriptions/${azurerm_subscription.this.subscription_id}"
+
+  body = {
+    tags = each.value.tags
+  }
 
   lifecycle {
     precondition {

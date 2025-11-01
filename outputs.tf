@@ -17,7 +17,7 @@ output "subscription" {
 output "resource_group_ids" {
   description = "Map of resource group identifiers keyed by subscription/resource group."
   value = {
-    for key, resource_group in azurerm_resource_group.resource_group :
+    for key, resource_group in azapi_resource.resource_group :
     format("%s:%s", var.subscription_key, key) => resource_group.id
   }
 }
@@ -25,13 +25,13 @@ output "resource_group_ids" {
 output "resource_group_details" {
   description = "Detailed resource group information keyed by subscription/resource group."
   value = {
-    for key, resource_group in azurerm_resource_group.resource_group :
+    for key, resource_group in azapi_resource.resource_group :
     format("%s:%s", var.subscription_key, key) => {
       id              = resource_group.id
       name            = resource_group.name
       location        = resource_group.location
       subscription_id = azurerm_subscription.this.subscription_id
-      tags            = resource_group.tags
+      tags            = try(resource_group.output.tags, {})
     }
   }
 }
