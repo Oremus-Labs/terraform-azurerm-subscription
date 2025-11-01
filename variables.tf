@@ -14,6 +14,7 @@ variable "config" {
     workload                   = optional(string)
     alias                      = optional(string)
     management_group_id        = optional(string)
+    management_group_name      = optional(string)
     tags                       = optional(map(string))
     resource_group_defaults = optional(object({
       location = optional(string)

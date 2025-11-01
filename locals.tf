@@ -34,4 +34,10 @@ locals {
       tags     = merge(local.subscription_defaults.tags, rg_config.tags != null ? rg_config.tags : {})
     }
   }
+
+  # Resolved management group id from either explicit id or lookup by name
+  management_group_id = coalesce(
+    var.config.management_group_id,
+    var.config.management_group_name != null ? (data.azurerm_management_group.target[0].id) : null
+  )
 }
