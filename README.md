@@ -7,7 +7,7 @@
 
 Terraform module to provision an Azure subscription, associate it to a Management Group, and manage Resource Groups with consistent tagging and location defaults.
 
-- Registry: `Oremus-Labs/subscription/azurerm` (adjust to your exact org/namespace)
+- Registry: `Oremus-Labs/subscription/azurerm`
 - Provider: `azurerm`
 
 ## Usage
