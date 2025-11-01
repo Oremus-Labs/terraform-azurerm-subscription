@@ -5,9 +5,9 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 [![Terraform Registry](https://img.shields.io/badge/Terraform-Registry-623CE4.svg)](https://registry.terraform.io/modules/OremusLabs/subscription/azurerm)
 
-Enterprise-grade Terraform module to provision an Azure subscription, associate it to a Management Group, and manage Resource Groups with consistent tagging and location defaults.
+Terraform module to provision an Azure subscription, associate it to a Management Group, and manage Resource Groups with consistent tagging and location defaults.
 
-- Registry: `OremusLabs/subscription/azurerm` (adjust to your exact org/namespace)
+- Registry: `Oremus-Labs/subscription/azurerm` (adjust to your exact org/namespace)
 - Provider: `azurerm`
 
 ## Usage
