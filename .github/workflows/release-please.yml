@@ -17,3 +17,4 @@ jobs:
         with:
           # Keep config in-repo (no deprecated inputs)
           config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json

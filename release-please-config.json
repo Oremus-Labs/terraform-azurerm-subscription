@@ -1,5 +1,9 @@
 {
-  "release-type": "simple",
+  "packages": {
+    ".": {
+      "release-type": "simple"
+    }
+  },
   "include-component-in-tag": false,
   "changelog-sections": [
     { "type": "feat", "section": "Features", "hidden": false },
